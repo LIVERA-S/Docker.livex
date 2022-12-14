@@ -14,6 +14,8 @@ services:
         - ./client:/app
       ports:
         - 4200:4200
+      networks:
+      - shared-network
   server:
       build:
         dockerfile: Dockerfile
@@ -22,3 +24,8 @@ services:
         - ./servers:/app
       ports:
         - 5000:5000
+      networks:
+      - shared-network
+
+networks:
+  shared-network:
