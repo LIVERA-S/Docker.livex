@@ -20,6 +20,10 @@ services:
       build:
         dockerfile: Dockerfile
         context: ./servers
+      environment:            #setta alcune variabili d'ambiente
+      - MONGO_INITDB_DATABASE=animal_db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
       volumes:
         - ./servers:/app
       ports:
